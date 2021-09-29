@@ -21,14 +21,57 @@ export class CanvasLocal {
     this.centerX = this.maxX / 2;
     this.centerY = this.maxY / 2;
   }
+  drawLine(x1: number, y1: number, x2: number, y2:number) {
+    this.graphics.beginPath();
+    this.graphics.moveTo(x1, y1);
+    this.graphics.lineTo(x2, y2);
+    this.graphics.closePath();
+    this.graphics.stroke();
+  }
 
-  iX( x: number):number{return Math.round(this.centerX + x/this.pixelSize);}
-  iY( y: number):number{return Math.round(this.centerY - y/this.pixelSize);}
+  /*iX( x: number):number{return Math.round(this.centerX + x/this.pixelSize);}
+  iY( y: number):number{return Math.round(this.centerY - y/this.pixelSize);}*/
 
   paint() {
-    this.graphics.arc(this.iX(0), this.iY(0), Math.abs(this.iX(4)-this.iX(0)), 0,2*Math.PI, false);
-    this.graphics.stroke();
-    this.graphics.fillText("Lienzo listo desde ts", this.iX(2), this.iY(3.7));
+    let xa = 100;
+    let yb = 400;
+    let xc = 500;
+    let yd = 400;
+    for (let i = 1; i < 9;) {
+        this.drawLine(xa, yb, xc, yd);
+        xa = xa + 26;
+        yb = yb - 13;
+        xc = xc - 26;
+        yd = yd - 13;
+        i++;
+    }
+
+
+
+    xa = 100;
+    yb = 400;
+    xc = 303;
+    yd = 57;
+    for (let a = 1; a < 9;) {
+        this.drawLine(xa, yb, xc, yd);
+        xa=xa+26;
+        yb=yb-13;
+        yd=yd+26;
+        a++;
+    }
+    xa = 303;
+    yb = 57;
+    xc = 500;
+    yd = 400;
+    for (let a = 1; a < 9;) {
+      this.drawLine(xa, yb, xc, yd);
+       // A=A+25;
+       yb=yb+26;         
+       xc=xc-26;
+       yd=yd-13;
+        a++;
+    } 
+
   }
 
 }
