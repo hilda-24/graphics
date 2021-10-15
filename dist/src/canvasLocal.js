@@ -10,6 +10,7 @@ export class CanvasLocal {
       this.centerX = this.maxX / 12;
       this.centerY = this.maxY / 8 * 7;
   }
+  //
   iX(x) { return Math.round(this.centerX + x / this.pixelSize); }
   iY(y) { return Math.round(this.centerY - y / this.pixelSize); }
   drawLine(x1, y1, x2, y2) {

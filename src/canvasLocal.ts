@@ -119,7 +119,7 @@ export class CanvasLocal {
     //let h: number[] = [19, 10, 16, 2];
     let maxEsc: number;
     let colors: string[]= ['Magenta', 'Red', 'Green', 'Yellow'];
-
+    ///
     maxEsc = this.maxH(h);
     this.graphics.strokeStyle = 'black';
     this.graphics.fillStyle = colors[0]
