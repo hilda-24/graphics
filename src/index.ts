@@ -80,9 +80,9 @@ function decrDistFunc() {
 function pza1DerFunc() {
   let af = 10;
  	
-	Rota3D.initRotate( obj.w[139], obj.w[140], af*Math.PI/180);	
+	Rota3D.initRotate( obj.w[4], obj.w[8], af*Math.PI/180);	
 	
-  for (let i = 201; i <= 238; i++){
+  for (let i = 9; i <= 10; i++){
     obj.w[i] = Rota3D.rotate(obj.w[i]);
 	}
 	cv.setObj(obj);
@@ -92,9 +92,9 @@ function pza1DerFunc() {
 function pza1IzqFunc() {
   let af = -10;
  	
-	Rota3D.initRotate( obj.w[139], obj.w[140], af*Math.PI/180);	
+	Rota3D.initRotate( obj.w[4], obj.w[8], af*Math.PI/180);	
 	
-  for (let i = 201; i <= 238; i++){
+  for (let i = 9; i <= 10; i++){
     obj.w[i] = Rota3D.rotate(obj.w[i]);
 	}
 	cv.setObj(obj);
@@ -102,13 +102,11 @@ function pza1IzqFunc() {
 }
 function pza12DerFunc() {
   let af = 10;
-  console.log(obj.w[29], obj.w[30], obj.w[6]);
-  Rota3D.initRotate(obj.w[29], obj.w[30], af * Math.PI / 180);
+  console.log(obj.w[3], obj.w[7], );
+  Rota3D.initRotate(obj.w[3], obj.w[7], af * Math.PI / 180);
 	
-  for (let i = 101; i <= 140; i++){
-    obj.w[i] = Rota3D.rotate(obj.w[i]);
-  }
-  for (let i = 201; i <= 238; i++){
+  
+  for (let i = 11; i <= 12; i++){
     obj.w[i] = Rota3D.rotate(obj.w[i]);
 	}
 	cv.setObj(obj);
@@ -117,13 +115,11 @@ function pza12DerFunc() {
 
 function pza12IzqFunc() {
   let af = -10;
-  console.log(obj.w[29], obj.w[30]);
-	Rota3D.initRotate( obj.w[29], obj.w[30], af*Math.PI/180);	
+  console.log(obj.w[3], obj.w[7]);
+	Rota3D.initRotate( obj.w[3], obj.w[7], af*Math.PI/180);	
 	
-  for (let i = 101; i <= 140; i++){
-    obj.w[i] = Rota3D.rotate(obj.w[i]);
-	}
-  for (let i = 201; i <= 238; i++){
+  
+  for (let i = 11; i <= 12; i++){
     obj.w[i] = Rota3D.rotate(obj.w[i]);
 	}
   
