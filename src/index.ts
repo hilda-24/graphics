@@ -77,55 +77,74 @@ function decrDistFunc() {
   vp(0, 0, 0.5);
 }
 
+
 function pza1DerFunc() {
-  let af = 10;
- 	
-	Rota3D.initRotate( obj.w[4], obj.w[8], af*Math.PI/180);	
-	
-  for (let i = 9; i <= 10; i++){
+  let af = 10;	
+  if(lim<=9){
+    Rota3D.initRotate( obj.w[4], obj.w[8], af*Math.PI/180);	
+    for (let i = 9; i <= 10; i++){
     obj.w[i] = Rota3D.rotate(obj.w[i]);
-	}
-	cv.setObj(obj);
-  cv.paint();	
+    }
+    cv.setObj(obj);
+    cv.paint();	
+    lim=lim+1;
+  }  
 }
+let lim=0;
 
 function pza1IzqFunc() {
+  
   let af = -10;
- 	
-	Rota3D.initRotate( obj.w[4], obj.w[8], af*Math.PI/180);	
-	
-  for (let i = 9; i <= 10; i++){
-    obj.w[i] = Rota3D.rotate(obj.w[i]);
-	}
-	cv.setObj(obj);
-  cv.paint();	
+  if(lim>0){
+    Rota3D.initRotate( obj.w[4], obj.w[8], af*Math.PI/180);	
+	  for (let i = 9; i <= 10; i++){
+      obj.w[i] = Rota3D.rotate(obj.w[i]);
+    }
+    cv.setObj(obj);
+    cv.paint();
+    lim=lim-1;
+  }
+		
 }
+var aux=0;
 function pza12DerFunc() {
   let af = 10;
-  console.log(obj.w[3], obj.w[7], );
-  Rota3D.initRotate(obj.w[3], obj.w[7], af * Math.PI / 180);
-	
-  
-  for (let i = 11; i <= 12; i++){
-    obj.w[i] = Rota3D.rotate(obj.w[i]);
-	}
-	cv.setObj(obj);
-  cv.paint();	
+
+    if(aux>0){
+      console.log(obj.w[3], obj.w[7], );
+    Rota3D.initRotate(obj.w[3], obj.w[7], af * Math.PI / 180);
+    for (let i = 11; i <= 12; i++){
+      obj.w[i] = Rota3D.rotate(obj.w[i]);
+    }
+    cv.setObj(obj);
+    cv.paint();	
+    aux=aux-1;
+    
+    }
+    
+
 }
 
 function pza12IzqFunc() {
   let af = -10;
-  console.log(obj.w[3], obj.w[7]);
-	Rota3D.initRotate( obj.w[3], obj.w[7], af*Math.PI/180);	
-	
   
-  for (let i = 11; i <= 12; i++){
-    obj.w[i] = Rota3D.rotate(obj.w[i]);
-	}
+  if(aux<=9){
+    aux=aux+1;
+    console.log(obj.w[3], obj.w[7]);
+    Rota3D.initRotate( obj.w[3], obj.w[7], af*Math.PI/180);	
+    for (let i = 11; i <= 12; i++){
+      obj.w[i] = Rota3D.rotate(obj.w[i]);
+    }
+    cv.setObj(obj);
+    cv.paint();
+  }
+    
   
-	cv.setObj(obj);
-  cv.paint();	
+  
+  	
 }
+
+
 
 document.getElementById('file-input').addEventListener('change', leerArchivo, false);
 document.getElementById('eyeDown').addEventListener('click', eyeDownFunc, false);
@@ -141,6 +160,7 @@ document.getElementById('pza1Izq').addEventListener('click', pza1IzqFunc, false)
 document.getElementById('pza1Der').addEventListener('click', pza1DerFunc, false);
 document.getElementById('pza12Izq').addEventListener('click', pza12IzqFunc, false);
 document.getElementById('pza12Der').addEventListener('click', pza12DerFunc, false);
+
 
 let Pix: number, Piy: number;
 let Pfx: number, Pfy: number;

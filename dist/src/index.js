@@ -65,44 +65,61 @@ function decrDistFunc() {
 }
 function pza1DerFunc() {
     var af = 10;
-    Rota3D.initRotate(obj.w[4], obj.w[8], af * Math.PI / 180);
-    for (var i = 9; i <= 10; i++) {
-        obj.w[i] = Rota3D.rotate(obj.w[i]);
+    if(lim<=9){
+        Rota3D.initRotate(obj.w[4], obj.w[8], af * Math.PI / 180);
+        for (var i = 9; i <= 10; i++) {
+            obj.w[i] = Rota3D.rotate(obj.w[i]);
+        }
+        cv.setObj(obj);
+        cv.paint();
+        lim=lim+1;
     }
-    cv.setObj(obj);
-    cv.paint();
+    
 }
+
+let lim=0;
 function pza1IzqFunc() {
-    var af = -10;
-    Rota3D.initRotate(obj.w[4], obj.w[8], af * Math.PI / 180);
-    for (var i = 9; i <= 10; i++) {
+    let af = -10;
+    
+    if(lim>0){
+        Rota3D.initRotate(obj.w[4], obj.w[8], af * Math.PI / 180);
+        for (let i = 9; i <= 10; i++){
         obj.w[i] = Rota3D.rotate(obj.w[i]);
-    }
-    cv.setObj(obj);
-    cv.paint();
+        }
+        cv.setObj(obj);
+        cv.paint();	
+        lim=lim-1;
+    }   
+  
 }
+var aux=0;
 function pza12DerFunc() {
     var af = 10;
-    console.log(obj.w[3], obj.w[7]);
-    Rota3D.initRotate(obj.w[3], obj.w[7], af * Math.PI / 180);
-  
-    
-    for (var i = 11; i <= 12; i++) {
-        obj.w[i] = Rota3D.rotate(obj.w[i]);
+    if(aux>0){
+        console.log(obj.w[3], obj.w[7]);
+        Rota3D.initRotate(obj.w[3], obj.w[7], af * Math.PI / 180);
+        for (var i = 11; i <= 12; i++) {
+            obj.w[i] = Rota3D.rotate(obj.w[i]);
+        }
+        cv.setObj(obj);
+        cv.paint();
+        aux=aux-1;
     }
-    cv.setObj(obj);
-    cv.paint();
+    
+    
 }
 function pza12IzqFunc() {
     var af = -10;
-    console.log(obj.w[3], obj.w[7]);
-    Rota3D.initRotate(obj.w[3], obj.w[7], af * Math.PI / 180);
-    
-    for (var i = 11; i <= 12; i++) {
-        obj.w[i] = Rota3D.rotate(obj.w[i]);
+    if(aux<=9){
+        console.log(obj.w[3], obj.w[7]);
+        Rota3D.initRotate(obj.w[3], obj.w[7], af * Math.PI / 180);
+        for (var i = 11; i <= 12; i++) {
+            obj.w[i] = Rota3D.rotate(obj.w[i]);
+        }
+        cv.setObj(obj);
+        cv.paint();
+        aux=aux+1;
     }
-    cv.setObj(obj);
-    cv.paint();
 }
 document.getElementById('file-input').addEventListener('change', leerArchivo, false);
 document.getElementById('eyeDown').addEventListener('click', eyeDownFunc, false);
